@@ -1,5 +1,6 @@
 /*////////////////////////////////////////////////////////////////////////
 Table of Contents:
+    0. Imports
     1. Global Styles
     2. Typografie
     3. Areas
@@ -11,18 +12,87 @@ Table of Contents:
 ////////////////////////////////////////////////////////////////////////*/
 
 
+/*////////////////////////
+ 0. imports
+////////////////////////*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*////////////////////////
     1. Global Styles
 ////////////////////////*/
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
 
+    /*
+    overflow: hidden;
+    h1 content overflowde waardoor er een witte rand boven de pagina ontstond
+    geen idee of dit netjes is
 
+    -> nee want geen scrollbar meer op de pagina, verplaatst naar header
+    */
+    /*overflow: hidden;*/
+}
+
+:root{
+    --my-grey: hsl(190, 11%, 58%);
+    --my-grey-boxshadow: hsl(190, 11%, 68%);
+    --my-darkgreen: hsl(199, 28%, 15%);
+    --my-darkgreen-hover: hsl(199, 28%, 45%);
+}
+
+.center-lr{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-width{
+    width:1000px;
+}
 
 /*////////////////////////
     2. Typography
 ////////////////////////*/
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color:var(--my-darkgreen);
+    font-size:10pt;
+}
 
+*::placeholder{
+    color: var(--my-darkgreen);
+}
 
+h1,h2{
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h1{
+    font-size: 60pt;
+}
+
+h2{
+    font-size: 18pt;
+}
+
+a{
+    color:var(--my-grey);
+    text-decoration: underline;
+}
+
+a:hover{
+    text-decoration: inherit;
+}
+
+.quote-caption figcaption p{
+    font-style: italic;
+}
 
 /*////////////////////////
     3. Areas
@@ -31,19 +101,148 @@ Table of Contents:
 
 
 /*///////////// 3.1 Header /////////////*/
+header{
+    background-image: url("../assets/images/mountains.jpg");
+    background-size: cover;
 
+    overflow: hidden; /*h1 clipt net door de header heen en zorgt voor een witruimte*/
+}
+
+header form input,
+header form button{
+    padding:10px;
+    border:2px solid var(--my-darkgreen);
+    height:50px;
+}
+
+header form button{
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    border-left:none;
+    margin-left:-2px;
+
+    background-color: var(--my-darkgreen);
+    color:white;
+    width:180px;
+}
+
+header form input{
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    border-right:none;
+    margin-right:-2px;
+    width:280px;
+}
+
+header form button:hover{
+    background-color: var(--my-darkgreen-hover);
+    border-color:     var(--my-darkgreen-hover);
+}
+
+.header-container{
+    text-align: center;
+    padding-bottom: 200px;
+}
+
+.header-container>*{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
 
 
 /*///////////// 3.2 Testimonial /////////////*/
+.testimonials-container{
+}
 
+.testimonial{
+    /*
+    START DEBUG*/
+    /*background-color: grey;*/
+    /*END DEBUG*/
 
+    position:relative;
+
+    margin-top: 40px;
+    padding:30px 130px;
+    border-radius: 5px;
+    box-shadow:0 0 20px 4px var(--my-grey-boxshadow);
+}
+
+.quote-img{
+    position:absolute;
+    width:33px; /*anders gaat hij misschien stuk als er een ander plaatje is*/
+    left:87px; /*130(testimonial padding) - 33 (breedte) -10 (spacing)*/
+}
+
+.quote-caption{
+    margin-top:20px;
+}
+
+.testimonial-name{
+    display: inline;
+    margin-left: 10px;
+}
+
+.testimonial-avatar{
+    vertical-align: middle;
+    width:44px;
+    height:44px;
+}
 
 /*///////////// 3.3 Support /////////////*/
+.support-container{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
 
+.support-container button{
+    padding: 15px;
+    text-align: center;
+    border-radius: 30px;
+    color:white;
+    background-color: var(--my-darkgreen);
+    border:2px solid var(--my-darkgreen);
+}
+
+.support-container img{
+    width:100%;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.support-container p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 
 /*///////////// 3.4 Faq /////////////*/
+.faq-container{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
 
+.faq-container summary{
+    cursor:pointer;
+}
 
+.faq-container>*{
+    margin-bottom:20px;
+}
+
+.faq-answer{
+    border-radius: 10px;
+    padding:20px;
+    background-color: var(--my-grey);
+    max-width:650px;
+}
 
 /*///////////// 3.5 Footer /////////////*/
+.copyright{
+    margin-top: 40px;
+    background-color: var(--my-darkgreen);
+    color:white;
+    height:60px;
+    line-height: 60px;
+    text-align: center;
+}
