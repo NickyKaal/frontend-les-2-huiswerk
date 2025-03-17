@@ -132,6 +132,7 @@ header form input{
     border-right:none;
     margin-right:-2px;
     width:280px;
+    background-color: transparent;
 }
 
 header form button:hover{
